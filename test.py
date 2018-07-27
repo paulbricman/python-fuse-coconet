@@ -1,29 +1,31 @@
 import coconet
+from tkinter.filedialog import askopenfilename
+import matplotlib.pyplot as plt
+import cv2
 
-picture_sizex = 256
-picture_sizey = 256
-address = './butterfly_GT.bmp'
+picture_sizex = 32
+picture_sizey = 32
+enhance = 1
+#enhance = 4
+
+address = askopenfilename()
+
 img, filename = coconet.load_image(address)
 
-
-X = coconet.generate_placeholder_tensor(picture_sizex, picture_sizey, trimensional = True)
-Y = coconet.generate_value_tensor(img, picture_sizex, picture_sizey, trimensional = True)
-model = coconet.generate_model_conv([64], dim = 5)
-
-history = model.fit(X, Y, epochs = 1000, batch_size = 65536)
-prediction = coconet.predict(model, X, picture_sizex, picture_sizey)
-
-print(coconet.compare_images(img, prediction))
-coconet.save_image(prediction, 'butterfly_conv.png')
-
-"""
 X = coconet.generate_placeholder_tensor(picture_sizex, picture_sizey)
+X_SR = coconet.generate_placeholder_tensor(picture_sizex, picture_sizey, enhance = enhance)
 Y = coconet.generate_value_tensor(img, picture_sizex, picture_sizey)
-model = coconet.generate_model_dense([32] * 10)
+model = coconet.generate_model_dense([100] * 10)
 
-history = model.fit(X, Y, epochs = 1000, batch_size = 65536)
-prediction = coconet.predict(model, X, picture_sizex, picture_sizey)
 
-print(coconet.compare_images(img, prediction))
-coconet.save_image(prediction, 'butterfly_dense.png')
-"""
+#history = model.fit(X, Y, epochs = 1000, batch_size = 128, shuffle = True)
+history = model.fit(X, Y, epochs = 1000, batch_size = 1024)
+prediction = coconet.predict(model, X_SR, picture_sizex * enhance, picture_sizey * enhance)
+
+plt.subplot(121)
+plt.imshow(cv2.cvtColor(img, cv2.COLOR_BGR2RGB))
+plt.subplot(122)
+plt.imshow(cv2.cvtColor(prediction, cv2.COLOR_BGR2RGB))
+plt.show()
+
+coconet.save_image(prediction, address[:-4] + ' FUSED.png')
