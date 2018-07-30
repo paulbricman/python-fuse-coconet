@@ -39,3 +39,22 @@ Run test file.
 ```
 python3 test.py
 ```
+## Docker version
+[Install Docker](https://docs.docker.com/install/#releases)
+Build Docker image.
+```
+sudo make bash GPU=0
+```
+Install additional stuff.
+```
+apt-get install python-tk
+```
+Clone repository.
+Install python module requirements from provided text file.
+```
+pip install -r requirements.txt
+```
+Run test file.
+```
+python3 test.py
+```
