@@ -9,8 +9,33 @@ We propose a __deep neural network__ approach for mapping the 2D pixel coordinat
 The demontration script are written Python 3 using Keras with Tensorflow back-end, along with other utility libraries. 
 
 ## Linux
+Install Python 3.
 ```
 sudo apt-get install python3.6
+```
+Install TKinter.
+```
 apt-get install python-tk
+```
+Install python module requirements from provided text file.
+```
 pip install -r requirements.txt
+```
+Run test file.
+```
+python3 test.py
+```
+
+## Windows and Mac OS X
+Install Python 3 and TKinter.
+```
+good luck
+```
+Install python module requirements from provided text file.
+```
+pip install -r requirements.txt
+```
+Run test file.
+```
+python3 test.py
 ```
