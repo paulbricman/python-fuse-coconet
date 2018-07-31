@@ -1,4 +1,4 @@
-![image](https://github.com/paubric/python-fuse-coconet/blob/master/fig1.png)
+![image](https://github.com/paubric/python-fuse-coconet/blob/master/images/fig1.png)
 
 # Functional Storage Encoding - CoCoNet
 
