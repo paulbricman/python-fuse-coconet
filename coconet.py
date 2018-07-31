@@ -27,7 +27,7 @@ def generate_placeholder_tensor(picture_sizex, picture_sizey, enhance = 1, trime
     if (trimensional == False):
         return np.asarray(X)
     else:
-        return np.reshape(np.asarray(X), (1, picture_sizex, picture_sizey, 6))
+        return np.reshape(np.asarray(X), (1, picture_sizex * enhance, picture_sizey * enhance, 6))
 
 def generate_value_tensor(img, picture_sizex, picture_sizey, trimensional = False):
     # Generate value matrix from image
