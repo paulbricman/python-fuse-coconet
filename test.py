@@ -5,8 +5,8 @@ import cv2
 
 picture_sizex = 32
 picture_sizey = 32
-enhance = 1
-#enhance = 4
+#enhance = 1
+enhance = 4
 
 address = askopenfilename()
 
@@ -18,8 +18,8 @@ Y = coconet.generate_value_tensor(img, picture_sizex, picture_sizey)
 model = coconet.generate_model_dense([100] * 10)
 
 
-#history = model.fit(X, Y, epochs = 1000, batch_size = 128, shuffle = True)
-history = model.fit(X, Y, epochs = 1000, batch_size = 1024)
+history = model.fit(X, Y, epochs = 1000, batch_size = 128, shuffle = True)
+#history = model.fit(X, Y, epochs = 1000, batch_size = 1024)
 prediction = coconet.predict(model, X_SR, picture_sizex * enhance, picture_sizey * enhance)
 
 plt.subplot(121)

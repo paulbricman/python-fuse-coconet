@@ -8,7 +8,7 @@ from keras.models import Sequential
 from keras.layers import Dense, Conv2D
 
 # Image Processing
-from skimage.measure import compare_psnr, compare_ssim, compare_mse
+#from skimage.measure import compare_psnr, compare_ssim, compare_mse
 import cv2
 
 # Others
