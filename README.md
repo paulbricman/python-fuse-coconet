@@ -30,9 +30,6 @@ python3 test.py
 
 ## Windows and Mac OS X
 Install Python 3 and TKinter.
-```
-good luck
-```
 Install python module requirements from provided text file.
 ```
 pip install -r requirements.txt
@@ -47,7 +44,7 @@ Build Docker image.
 ```
 sudo make bash GPU=0
 ```
-Install additional stuff.
+Install additional requirements.
 ```
 apt-get install python-tk
 ```
