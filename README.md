@@ -57,3 +57,13 @@ Run test file.
 ```
 python3 test.py
 ```
+# Citation
+Please cite the following work if you use any part of this code in your scientific work:
+@inproceedings{ Bricman-ICONIP-2018,
+authors = {Paul Andrei Bricman and Radu Tudor Ionescu},
+title = "{CocoNet: A deep neural network for mapping pixel coordinates to color values}",
+booktitle = {Proceedings of ICONIP},
+year = {2018}}
+
+https://arxiv.org/abs/1805.11357
+
